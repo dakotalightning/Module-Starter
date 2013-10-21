@@ -28,9 +28,26 @@
     <style>
         .well p {
             margin: 0;
+            margin-top: 10px;
         }
         .well {
-            margin-top: 10px;
+            background: #fff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding: 0 0 9px 9px;
+            border: 0px;
+            border-top: 1px solid #e3e3e3;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .label {
+            padding: 5px 15px;
+            color: #999;
+            background: #f9f9f9;
+            font-weight: normal;
+            border-left: 1px solid #e3e3e3;
+            border-right: 1px solid #e3e3e3;
+            border-bottom: 1px solid #e3e3e3;
         }
     </style>
 
@@ -115,16 +132,16 @@
                                 <p>{{html description}}</p>
                                 
                                 <div class="bs-example">
+                                    
                                     {{modifierMarkup}}
-                                    <span class="label label-primary pull-right">Default styling</span>
                                     
                                     {{#eachModifier}}
 
                                         <div class="well well-sm">
+                                            <span class="label pull-right">{{name}}</span>
                                             {{html description}}
                                         </div>
 
-                                        <span class="label label-primary pull-right">{{name}}</span>
 
                                         {{modifierMarkup}}
 
