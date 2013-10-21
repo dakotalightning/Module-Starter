@@ -1,6 +1,13 @@
 // ---------------------------------------------------------------------------
 // Imports
 
+@import "susy";
+@import "compass";
+
+@import "settings/variables";
+@import "settings/extends";
+@import "settings/mixins";
+
 @import "base/base";
 @import "base/config";
 @import "base/layout";
@@ -8,11 +15,9 @@
 
 @import "modules/buttons";
 @import "modules/lists";
+@import "modules/forms";
 @import "modules/nav";
-
-@import "settings/extends";
-@import "settings/mixins";
-@import "settings/variables";
+@import "modules/icons";
 
 @import "state/state";
 

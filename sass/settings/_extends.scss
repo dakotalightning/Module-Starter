@@ -1,0 +1,184 @@
+/*
+Extentions
+
+@extends
+
+Styleguide 4.0
+*/
+
+.display-block {
+    display: block;
+}
+
+// Floats
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+// Clearfix
+
+.group {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Surgical classes
+.col-gutters {
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+}
+
+.col-baselines {
+    padding-bottom: $grid-baseline;
+    padding-top: $grid-baseline;
+}
+
+.col-box {
+    padding: $grid-baseline $gutter-width;
+}
+
+// Margins & paddings
+
+.margin-0 {
+    margin: 0;
+}
+.margin-bottom {
+    margin-bottom: $grid-baseline;
+}
+.margin-top {
+    margin-top: $grid-baseline;
+}
+.pad-0 {
+    padding: 0;
+}
+.pad-bottom {
+    padding-bottom: $grid-baseline;
+}
+.pad-top {
+    padding-top: $grid-baseline;
+}
+
+// Box offset
+
+.box-offset {
+    @extend %background-white;
+    border: 1px solid $gray-light;
+    @extend %border-radius-base;
+}
+
+// Colors
+// ==================================================
+
+// Text
+
+%color-primary {
+    color: $primary;
+}
+%color-secondary {
+    color: $secondary;
+}
+%color-tertiary {
+    color: $tertiary;
+}
+
+%color-blue {
+    color: $blue;
+}
+%color-green {
+    color: $green;
+}
+%color-white {
+    color: $white;
+}
+%color-gray {
+    color: $gray;
+}
+%color-gray-dark {
+    color: $gray-dark;
+}
+%color-black {
+    color: $black;
+}
+
+// Background
+
+%background-primary {
+    background: $primary;
+}
+%background-secondary {
+    background: $secondary;
+}
+%background-tertiary {
+    background: $tertiary;
+}
+
+%background-blue {
+    background: $blue;
+}
+%background-green {
+    background: $green;
+}
+%background-orange {
+    background: $orange;
+}
+%background-red {
+    background: $red;
+}
+%background-white {
+    background: $white;
+}
+
+// Typography
+// ==================================================
+
+%font-family-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+%font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+%line-height-base {
+  line-height: $grid-baseline;
+}
+
+// Sizes
+
+.h-headline {
+  font-size: 36px;
+}
+.h-subheadline {
+  font-size: 21px;
+}
+.h-byline {
+  font-size: 18px;
+}
+.h-standfirst {
+  font-size: 16px;
+}
+.h-related {
+  font-size: $font-size-base;
+}
+.h-promo {
+  font-size: 12px;
+}
+.h-micro {
+  font-size: 10px;
+}
+
+// Misc
+// ==================================================
+
+%border-radius-base {
+    @include border-radius($border-radius-base);
+}

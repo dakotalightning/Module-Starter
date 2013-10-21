@@ -1,5 +1,23 @@
 /*
 Layout
 
-Styleguide 1.2
+The grid is based on [susy grid](http://susy.oddbird.net/guides/reference/).
+
+    // $total-columns: <number>;
+    $total-columns: 12;
+
+    // $column-width: <length>;
+    $column-width: 4em;
+
+    // $gutter-width: <length>;
+    $gutter-width: 1em;
+
+    // $grid-padding: <length>;
+    $grid-padding: $gutter-width;
+
+Styleguide 2.0
 */
+
+.page { 
+    @include container; 
+}

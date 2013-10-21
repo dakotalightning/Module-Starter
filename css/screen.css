@@ -1,4 +1,72 @@
 /*
+Extentions
+
+@extends
+
+Styleguide 4.0
+*/
+.display-block { display: block; }
+
+.pull-left { float: left; }
+
+.pull-right { float: right; }
+
+.group:before, .group:after { content: ""; display: table; }
+.group:after { clear: both; }
+
+.col-gutters { padding-left: 1em; padding-right: 1em; }
+
+.col-baselines { padding-bottom: 1em; padding-top: 1em; }
+
+.col-box { padding: 1em 1em; }
+
+.margin-0 { margin: 0; }
+
+.margin-bottom { margin-bottom: 1em; }
+
+.margin-top { margin-top: 1em; }
+
+.pad-0 { padding: 0; }
+
+.pad-bottom { padding-bottom: 1em; }
+
+.pad-top { padding-top: 1em; }
+
+.box-offset { border: 1px solid #d4d4d4; }
+
+h1, h2, h3, h4 { color: #29abe2; }
+
+.text-subtle { color: #999999; }
+
+html { color: #555555; }
+
+h5, h6 { color: #333333; }
+
+.box-offset { background: white; }
+
+html { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6, strong { font-weight: 600; }
+
+html { line-height: 1em; }
+
+.h-headline, h1 { font-size: 36px; }
+
+.h-subheadline, h2 { font-size: 21px; }
+
+.h-byline, h3 { font-size: 18px; }
+
+.h-standfirst, h4 { font-size: 16px; }
+
+.h-related, html, h5 { font-size: 14px; }
+
+.h-promo, h6 { font-size: 12px; }
+
+.h-micro { font-size: 10px; }
+
+.box-offset { -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
+
+/*
 Base
 
 Styleguide 1.0
@@ -11,58 +79,64 @@ Styleguide 1.1
 /*
 Layout
 
-Styleguide 1.2
+The grid is based on [susy grid](http://susy.oddbird.net/guides/reference/).
+ // $total-columns: <number>; $total-columns: 12;
+ // $column-width: <length>; $column-width: 4em;
+ // $gutter-width: <length>; $gutter-width: 1em;
+ // $grid-padding: <length>; $grid-padding: $gutter-width;
+
+Styleguide 2.0
 */
+.page { *zoom: 1; max-width: 59em; _width: 59em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; }
+.page:after { content: ""; display: table; clear: both; }
+
 /*
 Type
 
-Styleguide 1.3
+Heading styles
+
+Markup:
+<h1>Heading</h1>
+<h2>Heading</h2>
+<h3>Heading</h3>
+<h4>Heading</h4>
+<h5>Heading</h5>
+<h6>Heading</h6>
+
+Styleguide 3.0
 */
+h1, h2, h3, h4, h5, h6, p { margin: 0 0 1em 0; }
+
+.text-subtle { font-weight: normal; }
+
 /*
 Buttons
 
 A majority of buttons in the site are built from the same base class.
 
-Markup:
-<a href="#" class="button {$modifiers}">Link Button</a>
-<button class="button {$modifiers}">Button Element</button>
-<input type="button" class="button {$modifiers}" value="input[type='button']"/>
-
-.primary             - Indicate that the button is the primary feature of this form.
-.remove              - Indicate that the button will remove a feature, or other negative connotations.
-.disabled            - Make the button change appearance to reflect it being disabled.
-:hover               - Highlight the button when hovered.
-:active              - "Press" the button down when clicked.
-
-Styleguide 2.0
-*/
-.button { -webkit-appearance: none; -moz-appearance: none; appearance: none; padding: 10px 20px; color: #fff; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; text-transform: lowercase; text-decoration: none; cursor: pointer; border-radius: 3px; background-color: #aaaaaa; border: 1px solid #777777; text-shadow: 0 2px 0 #909090; box-shadow: 0 3px 0 0 #5d5d5d, inset 0 1px 3px rgba(255, 255, 255, 0.4); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.125) 0%, rgba(0, 0, 0, 0.125) 100%); }
-.button:visited, .button:hover, .button:active { color: #fff; }
-.button:hover { background-color: #bebebe; border: 1px solid #8b8b8b; text-shadow: 0 2px 0 #a5a5a5; box-shadow: 0 3px 0 0 #727272, inset 0 1px 3px rgba(255, 255, 255, 0.4); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.125) 0%, rgba(0, 0, 0, 0.125) 100%); border: 1px solid #777777; }
-.button:active { position: relative; top: 3px; box-shadow: none !important; }
-.button.primary { background-color: #55cc44; border: 1px solid #318624; text-shadow: 0 2px 0 #3fae2f; box-shadow: 0 3px 0 0 #225e19, inset 0 1px 3px rgba(255, 255, 255, 0.4); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.125) 0%, rgba(0, 0, 0, 0.125) 100%); }
-.button.disabled { background-color: #dddddd; border: 1px solid #aaaaaa; text-shadow: 0 2px 0 #c3c3c3; box-shadow: 0 3px 0 0 #909090, inset 0 1px 3px rgba(255, 255, 255, 0.4); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.125) 0%, rgba(0, 0, 0, 0.125) 100%); cursor: default; }
-.button.remove { background-color: #cc5544; border: 1px solid #863124; text-shadow: 0 2px 0 #ae3f2f; box-shadow: 0 3px 0 0 #5e2219, inset 0 1px 3px rgba(255, 255, 255, 0.4); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.125) 0%, rgba(0, 0, 0, 0.125) 100%); }
-
-/*
-Lists
-
-Styleguide 2.1
+Styleguide 5.0
 */
 /*
-Lists
+Listings
 
-Styleguide 2.2
+Styleguide 6.0
 */
 /*
-Variables
+Forms
 
-Styleguide 3.0
+A majority of buttons in the site are built from the same base class.
+
+Styleguide 5.0
 */
 /*
-State
+Navigation
 
-Styleguide 4.0
+Styleguide 7.0
+*/
+/*
+States
+
+Styleguide 1.2
 */
 /* -------------------------------------------------------------------------*/
 /* Layout */
