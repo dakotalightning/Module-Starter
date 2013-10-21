@@ -34,6 +34,10 @@ module.exports = function(grunt) {
             css: {
                 files: ['css/*.css', 'styleguide-css/*.css']
             },
+            less: {
+                files: ['styleguide-template/public/*'],
+                tasks: ['shell']
+            },
             livereload: {
                 files: ['css/*.css', 'styleguide-css/*.css'],
                 options: { livereload: true }
