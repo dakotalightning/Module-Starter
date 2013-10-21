@@ -8,25 +8,24 @@ This is based on SMACSS and BEM
 - compass
 
 
-## File System
+## File Structure
 
-	--base
-		_layout
-		_config
-		_typography
-
-	--modules
-		_buttons
-		_lists
-		_navigation
-
-	--settings
-		_extends
-		_mixins
-		_variables	
-
-	--state
-		_state
+	styles
+	├── base
+	│   ├── base.scss
+	│   ├── layout.scss
+	│   ├── config.scss
+	│   ├── typography.scss
+	├── modules
+	│   ├── buttons.scss
+	│   ├── list.scss
+	│	└── navigation.scss
+	├── settings
+	│   ├── extend.scss
+	│   ├── mixins.scss
+	│	└── variables.scss
+	└── state
+	    └── state.scss
 
 ## Requirements
 
