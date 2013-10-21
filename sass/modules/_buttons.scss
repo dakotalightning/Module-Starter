@@ -10,8 +10,8 @@ Markup:
 
 .primary             - Indicate that the button is the primary feature of this form.
 .remove              - Indicate that the button will remove a feature, or other negative connotations.
+.disabled            - Make the button change appearance to reflect it being disabled.
 :hover               - Highlight the button when hovered.
-:disabled            - Make the button change appearance to reflect it being disabled.
 :active              - "Press" the button down when clicked.
 
 Styleguide 2.0
@@ -36,7 +36,7 @@ Styleguide 2.0
     
     color:#fff;
     &:visited, &:hover, &:active {
-            color:#fff;
+        color:#fff;
     }
 
     font-family:Helvetica, Arial, sans-serif;
@@ -61,7 +61,7 @@ Styleguide 2.0
     &.primary {
             @include button-colorize(#5c4);
     }
-    &:disabled {
+    &.disabled {
             @include button-colorize(lighten($color, 20%));
             cursor:default;
     }

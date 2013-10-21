@@ -1,10 +1,53 @@
-# Starter point
+# Styleguide
 
-This is based on SMACSS and BEM
+Welcome to the GitHub CSS Styleguide. It's pretty rad. Before reading this, you should have a general understanding for specificity, the SCSS syntax, and KSS documentation..
 
-This will create your sass compiled, and generate a kss-node style guide. You can use `$ grunt watch` to monitor your sass folder for changes and it will compile everything for you.
+While we port our styles over to [SCSS](http://sass-lang.com/) with [KSS](https://github.com/kneath/kss) documentation, please make sure to upgrade an entire element's CSS at once. Do not mix small amounts of SCSS in with plain CSS. Do your future self a favor.
 
-### File Structure
+# Coding Style
+
+- Use soft-tabs with a two space indent.
+- Put spaces after `:` in property declarations.
+- Put spaces before `{` in rule declarations.
+- Use hex color codes `#000` unless using rgba.
+- Use `//` for comment blocks (instead of `/* */`).
+- Document styles with [KSS](https://github.com/kneath/kss).
+- Here is good example syntax:
+
+Here is good example syntax:
+
+    /* Buttons
+
+    Buttons can and should be clicked.
+
+    Markup: <button class="button {$modifiers}">
+     
+    :hover - Highlight the button when hovered.
+    .vip - Displays a very important button 
+     
+    Styleguide 1
+    */
+     
+    .button {
+        background-color: blue;
+        text-decoration: none;
+        font-size: 20px;
+        &:hover {
+            background-color: lighten(blue,20%);
+        }
+        &.vip {
+            font-size: 40px;
+        }
+    }
+
+# SCSS Style
+
+- Any $variable or @mixin that is used in more than one file should be put in globals/. Others should be put at the top of the file where they're used.
+- As a rule of thumb, don't nest further than 3 levels deep. If you find yourself going further, think about reorganizing your rules (either the specificity needed, or the layout of the nesting).
+
+# File Organization
+
+In general, the CSS file organization should follow something like this:
 
     styles
     ├── base
@@ -22,59 +65,47 @@ This will create your sass compiled, and generate a kss-node style guide. You ca
     └── state
         └── state.scss
 
-### Requirements
+# Class naming conventions
 
-You must have `node` to use `npm` installed here -> http://nodejs.org/
+Also, you will need to understand [SMACSS](http://smacss.com/) (Scalable and Module Architecture for CSS) and [B.E.M.](http://bem.info/) (Block — Element — Modifier), or this post will mostly be DOA. From here on, I am assuming you are familiar with the above.
 
-- Git is a recommendation with your workflow (http://git-scm.com/)
+[Reference](https://medium.com/objects-in-space/f6f404727)
 
-#### npm packages
+**User Needs Beer**
 
-Grunt (http://gruntjs.com/)
+Markup
+
+    <div class="cup--glass">
+        <div class="cup-glass__beer">
+            <div class="beer is-poisoned">
+                ...
+            </div>
+        </div>
+    </div>
+
+Styles
     
-    $ npm install -g grunt-cli
+    // module/_cup.scss
+    .cup { ... }
+    .cup--glass { 
+        @extend .cup;
+    }
+    .cup--glass__beer { ... }
 
-KSS-Node (http://hughsk.github.io/kss-node/)
+    // module/_beer.scss
+    .beer { ... }
 
-    $ npm install -g kss
+    // state/state.scss
+    .is-poisoned { ... }
 
-#### gems
+*Warning: Never @extend outside of a module. This will break the independence of this module by causing it to require another.*
 
-Compass (http://compass-style.org/install/)
+            ┌──────── modifier of the Module Class (keg, bottle, etc.)
+            │
+    .cup--glass__beer
+      │           │ 
+      │           └──────── Child Object/Module with properties 
+      │
+      └──────── Parent Object/Module (this gives the child context)
 
-    $ gem update --system
-    $ gem install compass
-
-Sass (http://sass-lang.com/)
-
-    $ gem install sass
-
-Susy (http://susy.oddbird.net/)
-
-    $ gem install susy
-    
-
-### Installing
-
-*This is assuming that you have **Requirements** installed on your system already*
-
-1. `$ git clone git@github.com:dakotalightning/Module-Starter.git`
-2. `$ cd Module-Starter`
-3. `$ npm install`
-4. `$ grunt --verbose` or `$ grunt`
-    - The file system will be created from your style sheets
-    - You can now open `styleguide/index.html`
-5. `$  grunt watch`
-    - This will watch the sass folder for outputs and generate your sass and styleguide as you work
-
-### Grunt Packages used
-
-- grunt-contrib-clean
-- grunt-contrib-watch
-- grunt-contrib-compass
-- grunt-contrib-copy
-- grunt-shell
-
-## Release History
-
-- Oct 20, 2013      0.1.0       Started created the full workflow
+*Break something into a module only if it would be useful in another context. Everything else remains an element or component inside a module.*
