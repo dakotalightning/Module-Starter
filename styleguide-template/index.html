@@ -1,130 +1,177 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>KSS: Living Styleguide</title>
-  <meta name="description" content="">
-  <meta name="generator" content="kss-node" />
+    <title>Living Styleguide</title>
 
-  <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="public/style.css">
 
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="public/style.css">
+    <!-- Documentation extras -->
+    <link href="http://getbootstrap.com/assets/css/docs.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/assets/css/pygments-manni.css" rel="stylesheet">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .well p {
+            margin: 0;
+        }
+        .well {
+            margin-top: 10px;
+        }
+    </style>
 
 </head>
-<body><div id="kss-wrapper">
-  <div id="kss-nav">
-    <header id="kss-header">
-      <hgroup><h1>kss-node Styleguide</h1></hgroup>
+<body>
+    <!-- Docs master nav -->    
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../" class="navbar-brand">Living Styleguide</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">0.0: Overview</a></li>
+                    {{#eachRoot}}
+                      <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
+                    {{/eachRoot}}
+                </ul>
+            </nav>
+        </div>
     </header>
-    <aside>
-      <nav><ul>
-        <li><a href="index.html">0.0: Overview</a></li>
-        {{#eachRoot}}
-          <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
-        {{/eachRoot}}
-      </ul></nav>
-    </aside>
-  </div>
-  <div role="main" id="kss-main">
-    <article id="kss-content">
-      {{#if overview}}
-        {{html overview}}
-      {{else}}
 
-        {{!
-          Find each section, in order.
-          If there's no markup or modifiers supplied, use a Markdown-only
-          layout instead.
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
 
-          The "root" element comes first in this loop, and can be detected using
-          the "#whenDepth 1" block as seen below.
-        }}
         {{#eachSection rootNumber}}
-          {{#whenDepth 1}}
-            <h1 class="kss-title"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h1>
-          {{else}}
-           <section class="kss-depth-{{ refDepth }}">
-            <h1 class="kss-title"><span class="kss-ref">{{ reference }}</span> - {{ header }}</h1>
-          {{/whenDepth}}
-            {{#ifAny markup modifiers}}
-                <div class="kss-box">{{html description}}</div>
-                <table class="kss-mod-list">
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Default styling</p></td>
-                    <td class="kss-mod-name"></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">{{modifierMarkup}}</td>
-                  </tr>
-                {{#eachModifier}}
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc">{{html description}}</td>
-                    <td class="kss-mod-name"><p>{{name}}</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">{{modifierMarkup}}</td>
-                  </tr>
-                {{/eachModifier}}
-                </table>
-                <div class="kss-markup">
-                  <pre class="prettyprint lang-html">{{markup}}</pre>
-                </div>
-            {{else}}
-                {{#if description}}
-                  {{html description}}
-                {{/if}}
-            {{/ifAny}}
-          {{#whenDepth 1}} {{else}}
-            </section>
-          {{/whenDepth}}
+
+            {{#whenDepth 1}}
+                <h1>{{header}}</h1>
+            {{/whenDepth}}
+
         {{/eachSection}}
-      {{/if}}
-    </article>
-  </div>
-  <footer>
-    {{#if argv.xdemo}}<a href="http://github.com/hughsk/kss-node"><img id="kss-github" style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>{{/if}}
-  </footer>
-  <!-- SCRIPTS -->
-  <script src="public/kss.js"></script>
-  <script src="public/prettify.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      var sidebarAdjust = function() {
-        // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
 
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
-        } else {
-          $('#kss-main, #kss-nav').height(height);
-        }
-      };
+      </div>
+    </div>
 
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
-      sidebarAdjust();
+    <div class="container bs-docs-container">
+        <div class="row">
+            
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix-top">
+                    <ul class="nav bs-sidenav">
 
-      // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
-      prettyPrint();
+                        <li class="active">
+                            <ul class="nav">
+                                {{#eachSection rootNumber}}
 
-    });
-  </script>
+                                    <li class="">
+                                        <a href="#section-{{ reference }}">{{header}}</a>
+                                    </li>
 
-  {{! This won't be included in the demo page }}
-  {{#if argv.xdemo}}
-    <script type="text/javascript">
-    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-12249588-4']); _gaq.push(['_trackPageview']);
-    (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+                                {{/eachSection}}
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="bd-docs-section">
+                {{#if overview}}
+                    {{html overview}}
+                {{else}}
+                
+                    {{#eachSection rootNumber}}
+                        {{#whenDepth 1}}
+                            <div class="page-header">
+                                <h1 id="section-{{ reference }}">{{ reference }}.0 - {{ header }}</h1>
+                            </div>
+                        {{else}}
+                            <section class="section-{{ reference }}">
+                                <h3 id="section-{{ reference }}">{{ reference }} - {{ header }}</h3>
+                        {{/whenDepth}}
+
+                        {{#ifAny markup modifiers}}
+
+                                <p>{{html description}}</p>
+                                
+                                <div class="bs-example">
+                                    {{modifierMarkup}}
+                                    <span class="label label-primary pull-right">Default styling</span>
+                                    
+                                    {{#eachModifier}}
+                                        
+                                        {{#if description}}
+
+                                        <div class="well well-sm">
+                                            {{html description}}
+                                        </div>
+
+                                        {{/if}}
+
+                                        <span class="label label-primary pull-right">{{name}}</span>
+
+                                        {{modifierMarkup}}
+
+                                    {{/eachModifier}}
+                                </div>
+
+                                <div class="highlight"><pre><code>{{markup}}</code></pre></div>
+
+                        {{else}}
+
+                            {{#if description}}
+                                {{html description}}
+                            {{/if}}
+
+                        {{/ifAny}}
+                        
+                        {{#whenDepth 1}} {{else}}
+                            </section>
+                        {{/whenDepth}}
+
+                    {{/eachSection}}
+
+                {{/if}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="public/kss.js"></script>
+    
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/application.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('pre>code').addClass('prettyprint');
+        });
     </script>
-  {{/if}}
-</div></body>
+</body>
 </html>
