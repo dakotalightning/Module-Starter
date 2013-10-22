@@ -1,5 +1,75 @@
 /*
 Listings
 
-Styleguide 6.0
+Styleguide 5.4
 */
+
+/* 
+Lists
+
+    <ul class="list">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </ul>
+
+Styleguide 5.4.1
+*/
+
+.list {
+    margin-bottom: 20px;
+
+    li {
+        line-height: 18px;
+        margin-bottom: 12px;
+        p {
+            line-height: 21px;
+        }
+    }
+}
+
+ul {
+    list-style: none outside;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ol,
+ul.square,
+ul.circle,
+ul.disc {
+    margin-left: 30px;
+}
+
+/* 
+Styles
+
+Markup:
+<ul class="list {$modifiers}">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+</ul>
+
+.square         - list square
+.circle         - list circle
+.disc           - list disc
+
+Styleguide 5.4.2
+*/
+
+ul.square {
+    list-style: square outside;
+}
+
+ul.circle {
+    list-style: circle outside;
+}
+
+ul.disc {
+    list-style: disc outside;
+}

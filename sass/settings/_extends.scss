@@ -1,8 +1,6 @@
 /*
 Extentions
 
-@extends
-
 Styleguide 4.0
 */
 
@@ -10,7 +8,21 @@ Styleguide 4.0
     display: block;
 }
 
-// Floats
+/*
+Pull-left
+
+Float an element.
+
+    .pull-left {
+        float: left;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+Styleguide 4.1
+*/
 
 .pull-left {
     float: left;
@@ -20,12 +32,34 @@ Styleguide 4.0
     float: right;
 }
 
-// Clearfix
+/*
+Clearfix
 
-.group {
+Clear the `float` on any element. Utilizes [the micro clearfix](http://nicolasgallagher.com/micro-clearfix-hack/) as popularized by Nicolas Gallagher. Can also be used as a mixin.
+
+    .clearfix {
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+
+    // Usage
+    .element {
+        @extend .clearfix();
+    }
+
+Styleguide 4.2
+*/
+
+.clearfix {
     &:before,
     &:after {
-        content: "";
+        content: " ";
         display: table;
     }
     &:after {
@@ -33,7 +67,20 @@ Styleguide 4.0
     }
 }
 
-// Surgical classes
+/*
+Surgical Classes
+
+Adding specific one-off styles to an element.
+
+Markup: <div class="highlight-box-light {$modifiers}">Look, I'm in a {$modifiers}</div>
+
+.col-gutters        - Adds padding to the left and right using $gutter-width
+.col-baselines      - Added padding to the bottom and top using $grid-baseline
+.col-box            - Adding padding around the element using both $gutter-baseline $grid-width
+
+Styleguide 4.3
+*/
+
 .col-gutters {
     padding-left: $gutter-width;
     padding-right: $gutter-width;
@@ -77,10 +124,24 @@ Styleguide 4.0
     @extend %border-radius-base;
 }
 
-// Colors
-// ==================================================
+.highlight-box-light {
+    color: #999;
+    background: #f9f9f9;
+    font-weight: normal;
+    border: 1px solid #e3e3e3;
+}
 
-// Text
+/*
+Colors
+
+Styleguide 1.2
+*/
+
+/*
+Text theme
+
+Styleguide 1.2.1
+*/
 
 %color-primary {
     color: $primary;
@@ -91,6 +152,26 @@ Styleguide 4.0
 %color-tertiary {
     color: $tertiary;
 }
+
+/*
+Base
+
+Styleguide 1.2.2
+*/
+
+%color-base-font {
+    color: $base-font-color;
+}
+
+%color-base-heading {
+    color: $base-heading-color;
+}
+
+/*
+Basic Colors
+
+Styleguide 1.2.3
+*/
 
 %color-blue {
     color: $blue;
@@ -111,7 +192,11 @@ Styleguide 4.0
     color: $black;
 }
 
-// Background
+/*
+Backgrounds
+
+Styleguide 1.3
+*/
 
 %background-primary {
     background: $primary;

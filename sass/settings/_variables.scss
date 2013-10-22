@@ -33,5 +33,11 @@ $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-s
 $font-weight-bold:       600;
 $font-size-base:         14px;
 
+$link-color:                $primary;
+$link-color-highlight:      darken($primary, 20);
+
+$base-font-color:       $gray;
+$base-heading-color:       $gray;
+
 // Misc
 $border-radius-base: 5px;

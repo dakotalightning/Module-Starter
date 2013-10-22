@@ -15,20 +15,25 @@ Styleguide 3.0
 */
 
 html {
-    @extend %color-gray-dark;
+    @extend %color-base-heading;
     @extend .h-related;
     @extend %line-height-base;
     @extend %font-family-sans-serif;
 }
 
-#{headings()},
-p {
+#{headings()} {
     margin: 0 0 $grid-baseline 0;
 }
 
 #{headings()},
 strong {
     @extend %font-weight-bold;
+}
+
+#{headings()} {
+    a {
+        font-weight: inherit;
+    }
 }
 
 h1 {
@@ -50,18 +55,89 @@ h6 {
     @extend .h-promo;
 }
 
-// Colors
+/*
+Paragraph
+
+Styleguide 3.1
+*/
+
+p {
+    margin: 0 0 ($grid-baseline / 2) 0;
+}
+
+p img {
+    @extend .margin-0;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+    @extend %color-base-heading;
+}
+
+small {
+    font-size: 70%;
+    color: inherit;
+}
+
+
+/* 
+Links
+
+Styleguide 3.2
+*/
+
+a,
+a:visited {
+    color: $link-color;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: $link-color-highlight;
+}
+p a,
+p a:visited {
+    line-height: inherit;
+}
+
+
+/* 
+Colors
+
+Markup:
+<span class="{$modifiers}">Muffin jelly beans I love powder sweet croissant. Liquorice icing chocolate bar apple pie lollipop jelly beans pastry.</span>
+
+.text-subtle        - To be used when the text is a Subtile
+.text-info          - To be used when the text is a Info
+.text-muted         - To be used when the text is a Muted
+
+Styleguide 3.3
+*/
 
 #{headings(4)} {
-    @extend %color-blue;
+    @extend %color-base-heading;
 }
 #{headings(5, 6)} {
-    @extend %color-black;
+    @extend %color-gray;
 }
 
 // Offset
 
 .text-subtle {
+    @extend %color-base-font;
+    font-weight: normal;
+}
+
+.text-info {
+    @extend %color-base-font;
+    font-weight: normal;
+}
+
+.text-muted {
     @extend %color-gray;
     font-weight: normal;
 }
