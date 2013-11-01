@@ -1,4 +1,4 @@
-/*
+/* 
 Extentions
 
 Styleguide 4.0
@@ -8,7 +8,8 @@ Styleguide 4.0
     display: block;
 }
 
-/*
+
+/* 
 Pull-left
 
 Float an element.
@@ -21,8 +22,9 @@ Float an element.
         float: right;
     }
 
-Styleguide 4.1
+Styleguide 4.1 
 */
+
 
 .pull-left {
     float: left;
@@ -32,7 +34,8 @@ Styleguide 4.1
     float: right;
 }
 
-/*
+
+/* 
 Clearfix
 
 Clear the `float` on any element. Utilizes [the micro clearfix](http://nicolasgallagher.com/micro-clearfix-hack/) as popularized by Nicolas Gallagher. Can also be used as a mixin.
@@ -48,13 +51,14 @@ Clear the `float` on any element. Utilizes [the micro clearfix](http://nicolasga
         }
     }
 
-    // Usage
+    Usage
     .element {
         @extend .clearfix();
     }
 
-Styleguide 4.2
+Styleguide 4.2 
 */
+
 
 .clearfix {
     &:before,
@@ -67,7 +71,8 @@ Styleguide 4.2
     }
 }
 
-/*
+
+/* 
 Surgical Classes
 
 Adding specific one-off styles to an element.
@@ -78,8 +83,9 @@ Markup: <div class="highlight-box-light {$modifiers}">Look, I'm in a {$modifiers
 .col-baselines      - Added padding to the bottom and top using $grid-baseline
 .col-box            - Adding padding around the element using both $gutter-baseline $grid-width
 
-Styleguide 4.3
+Styleguide 4.3 
 */
+
 
 .col-gutters {
     padding-left: $gutter-width;
@@ -137,11 +143,13 @@ Colors
 Styleguide 1.2
 */
 
-/*
+
+/* 
 Text theme
 
-Styleguide 1.2.1
+Styleguide 1.2.1 
 */
+
 
 %color-primary {
     color: $primary;
@@ -153,11 +161,13 @@ Styleguide 1.2.1
     color: $tertiary;
 }
 
-/*
+
+/* 
 Base
 
-Styleguide 1.2.2
+Styleguide 1.2.2 
 */
+
 
 %color-base-font {
     color: $base-font-color;
@@ -167,11 +177,13 @@ Styleguide 1.2.2
     color: $base-heading-color;
 }
 
-/*
+
+/* 
 Basic Colors
 
-Styleguide 1.2.3
+Styleguide 1.2.3 
 */
+
 
 %color-blue {
     color: $blue;
@@ -192,11 +204,13 @@ Styleguide 1.2.3
     color: $black;
 }
 
-/*
+
+/* 
 Backgrounds
 
-Styleguide 1.3
+Styleguide 1.3 
 */
+
 
 %background-primary {
     background: $primary;

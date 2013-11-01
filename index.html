@@ -2,16 +2,21 @@
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8" />
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Header Effects with CSS Transitions</title>
+
 	<meta name="description" content="Inspiration for on scroll header animations with various effects" />
 	<meta name="keywords" content="on scroll, animate, header, transition, css3, 3d, effect, inspiration" />
 	<meta name="author" content="Codrops" />
+
 	<link rel="shortcut icon" href="../favicon.ico">
+
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/screen.css" />
-	<script src="js/modernizr.custom.js"></script>
+	
 </head>
 <body>
 	<div class="container">
@@ -82,35 +87,36 @@
 		</div>
 
 		<footer>
-		            <div class="copyright">
-		                2013 © Copyright - Dakota J Lightning
-		            </div>
+            <div class="copyright">
+                2013 © Copyright - Dakota J Lightning
+            </div>
 		</footer>
 
 	</div>
 </div>
 
 	<!-- /container -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/appear.min.js"></script>
-	<script src="js/dakota.js"></script>
-	<script>
-			var $head = $( '#ha-header' );
-			$( '.ha-waypoint' ).each( function(i) {
-				var $el = $( this ),
-					animClassDown = $el.data( 'animateDown' ),
-					animClassUp = $el.data( 'animateUp' );
+<!-- 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/appear.min.js"></script>
+<script src="js/dakota.js"></script>
+<script>
+		var $head = $( '#ha-header' );
+		$( '.ha-waypoint' ).each( function(i) {
+			var $el = $( this ),
+				animClassDown = $el.data( 'animateDown' ),
+				animClassUp = $el.data( 'animateUp' );
 
-				$el.waypoint( function( direction ) {
-					if( direction === 'down' && animClassDown ) {
-						$head.attr('class', 'ha-header ' + animClassDown);
-					}
-					else if( direction === 'up' && animClassUp ){
-						$head.attr('class', 'ha-header ' + animClassUp);
-					}
-				}, { offset: '0' } );
-			} );
-		</script>
-</body>
+			$el.waypoint( function( direction ) {
+				if( direction === 'down' && animClassDown ) {
+					$head.attr('class', 'ha-header ' + animClassDown);
+				}
+				else if( direction === 'up' && animClassUp ){
+					$head.attr('class', 'ha-header ' + animClassUp);
+				}
+			}, { offset: '0' } );
+		} );
+	</script>
+ --></body>
 </html>

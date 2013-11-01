@@ -6,14 +6,15 @@
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-clean":          "*",
+        "grunt-contrib-cssmin":         "*",
         "grunt-contrib-compass":        "*",
         "grunt-contrib-watch":          "*",
-        "grunt-contrib-sass":           "*",
         "grunt-contrib-copy":           "*",
         "grunt-contrib-uglify":         "*",
-        "grunt-cssc":                   "*",
+        "grunt-contrib-coffee":         "*",
         "grunt-htmlhint":               "*",
         "grunt-shell":                  "*",
+        "grunt-cssc":                   "*",
         "matchdep":                     "*"
     }
 }

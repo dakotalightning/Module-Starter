@@ -2,9 +2,8 @@
 Listings
 
 Styleguide 5.4
-*/
 
-/* 
+ 
 Lists
 
     <ul class="list">
@@ -14,8 +13,9 @@ Lists
         <li>Four</li>
     </ul>
 
-Styleguide 5.4.1
+Styleguide 5.4.1 
 */
+
 
 .list {
     margin-bottom: 20px;
@@ -44,8 +44,8 @@ ul.disc {
     margin-left: 30px;
 }
 
-/* 
-Styles
+ 
+/* Styles
 
 Markup:
 <ul class="list {$modifiers}">
@@ -59,8 +59,9 @@ Markup:
 .circle         - list circle
 .disc           - list disc
 
-Styleguide 5.4.2
+Styleguide 5.4.2 
 */
+
 
 ul.square {
     list-style: square outside;

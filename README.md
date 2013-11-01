@@ -2,7 +2,18 @@
 
 This is based on SMACSS and BEM
 
+I use this for a starting point for all my projects.
+
 This will create your sass compiled, and generate a kss-node style guide. You can use `$ grunt watch` to monitor your sass folder for changes and it will compile everything for you.
+
+## Tasks
+
+	build
+
+	buildjs
+
+	buildcss
+	buildstyle
 
 ### File Structure
 
@@ -24,11 +35,11 @@ This will create your sass compiled, and generate a kss-node style guide. You ca
 
 ### Requirements
 
-You must have `node` to use `npm` installed here -> http://nodejs.org/
+This depends on (Node)[http://nodejs.org] and (npm)[https://npmjs.org].
 
 - Git is a recommendation with your workflow (http://git-scm.com/)
 
-#### npm packages
+#### npm packages (installed globally using npm)
 
 Grunt (http://gruntjs.com/)
     
@@ -37,6 +48,10 @@ Grunt (http://gruntjs.com/)
 KSS-Node (http://hughsk.github.io/kss-node/)
 
     $ npm install -g kss
+
+CoffeeScript (http://coffeescript.org/)
+
+	$ npm install -g coffee-script
 
 #### gems
 
@@ -69,11 +84,17 @@ Susy (http://susy.oddbird.net/)
 
 ### Grunt Packages used
 
+- grunt-contrib-compass
+- grunt-contrib-uglify
+- grunt-contrib-coffee
+- grunt-contrib-cssmin
 - grunt-contrib-clean
 - grunt-contrib-watch
-- grunt-contrib-compass
 - grunt-contrib-copy
+- grunt-htmlhint
 - grunt-shell
+- grunt-cssc
+- matchdep
 
 ## Release History
 

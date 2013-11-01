@@ -1,4 +1,4 @@
-/*
+/* 
 Layout
 
 The grid is based on [susy grid](http://susy.oddbird.net/guides/reference/).
@@ -15,8 +15,9 @@ The grid is based on [susy grid](http://susy.oddbird.net/guides/reference/).
     // $grid-padding: <length>;
     $grid-padding: $gutter-width;
 
-Styleguide 2.0
+Styleguide 2.0 
 */
+
 
 .page { 
     @include container; 

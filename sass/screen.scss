@@ -13,13 +13,15 @@
 @import "base/layout";
 @import "base/type";
 
-/*
+
+/* 
 Modules
 
 A majority of Modules
 
-Styleguide 5.0
+Styleguide 5.0 
 */
+
 
 @import "modules/buttons";
 @import "modules/lists";
@@ -30,10 +32,10 @@ Styleguide 5.0
 @import "state/state";
 
 
-/* -------------------------------------------------------------------------*/
-/* Layout */
+// /* -------------------------------------------------------------------------*/
+// Layout
 
-/* .container {
-  @include container;
-  @include susy-grid-background;
-} */
+// /* .container {
+//   @include container;
+//   @include susy-grid-background;
+// } */

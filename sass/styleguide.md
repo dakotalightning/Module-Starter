@@ -16,17 +16,16 @@ While we port our styles over to [SCSS](http://sass-lang.com/) with [KSS](https:
 
 Here is good example syntax:
 
-    /* Buttons
-
-    Buttons can and should be clicked.
-
-    Markup: <button class="button {$modifiers}">
-     
-    :hover - Highlight the button when hovered.
-    .vip - Displays a very important button 
-     
-    Styleguide 1
-    */
+    // Buttons
+    //
+    // Buttons can and should be clicked.
+    //
+    // Markup: <button class="button {$modifiers}"/>
+    //
+    // :hover - Highlight the button when hovered.
+    // .vip - Displays a very important button 
+    // 
+    // Styleguide 1
      
     .button {
         background-color: blue;
