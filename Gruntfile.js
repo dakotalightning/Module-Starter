@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+    
+
     grunt.initConfig({
         clean: {
             style: ['css', 'styleguide', 'styleguide-css']
@@ -34,8 +36,8 @@ module.exports = function(grunt) {
             css: {
                 files: ['css/*.css', 'styleguide-css/*.css']
             },
-            less: {
-                files: ['styleguide-template/public/*'],
+            template: {
+                files: ['styleguide-template/**/*'],
                 tasks: ['shell']
             },
             livereload: {
@@ -50,12 +52,8 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-shell');
-
+    require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+    
     grunt.registerTask('default', ['clean', 'compass', 'copy', 'shell']);
 
 };
