@@ -12,6 +12,8 @@
         "grunt-contrib-copy":           "*",
         "grunt-contrib-uglify":         "*",
         "grunt-contrib-coffee":         "*",
+        "grunt-contrib-concat":         "*",
+        "grunt-contrib-jshint":         "*",
         "grunt-htmlhint":               "*",
         "grunt-shell":                  "*",
         "grunt-cssc":                   "*",

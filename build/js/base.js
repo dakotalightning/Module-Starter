@@ -1,12 +1,5 @@
 (function() {
-  var cubes, num, race,
-    __slice = [].slice;
-
-  race = function() {
-    var runners, winner;
-    winner = arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    return print(winner, runners);
-  };
+  var cubes, num;
 
   if (typeof elvis !== "undefined" && elvis !== null) {
     alert("I knew it!");

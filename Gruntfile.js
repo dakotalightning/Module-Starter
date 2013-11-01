@@ -6,7 +6,8 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         clean: {
-            style: ['css', 'styleguide', 'build/css', 'build/js']
+            style: ['css', 'styleguide', 'build/css'],
+            javascript: ['build/js']
         },
         copy: {
             styleguide: {
@@ -79,6 +80,10 @@ module.exports = function(grunt) {
             js: {
                 files: ['assets/js/base.js'],
                 tasks: ['coffee', 'uglify']
+            },
+            watch: {
+                files: ['<%= jshint.files %>'],
+                tasks: ['jshint']
             }
         },
         shell: {
@@ -118,10 +123,40 @@ module.exports = function(grunt) {
                 }
             },
         },
+        concat: {
+            options: {
+                // define a string to put between each file in the concatenated output
+                separator: ';'
+            },
+            dist: {
+                // the files to concatenate
+                src: ['build/js/*.js', 'plugins/*.js'],
+                // the location of the resulting JS file
+                dest: 'build/js/build.js'
+            }
+        },
         uglify: {
+            options: {
+                // the banner is inserted at the top of the output
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
             build: {
                 files: {
-                    'js/base.min.js': ['build/js/base.js']
+                    'js/build.min.js': ['<%= concat.dist.dest %>']
+                }
+            }
+        },
+        jshint: {
+            // define the files to lint
+            files: ['gruntfile.js', 'build/js/*.js'],
+            // configure JSHint (documented at http://www.jshint.com/docs/)
+            options: {
+              // more options here if you want to override JSHint defaults
+            globals: {
+                    jQuery: true,
+                    console: true,
+                    module: true
                 }
             }
         }
@@ -131,9 +166,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', ['buildcss', 'buildstyle', 'buildjs']);
 
-    grunt.registerTask('buildjs', ['coffee', 'uglify']);
+    grunt.registerTask('buildjs', ['clean:javascript', 'coffee', 'jshint', 'concat', 'uglify']);
 
-    grunt.registerTask('buildcss', ['clean', 'compass', 'cssc', 'cssmin']);
+    grunt.registerTask('buildcss', ['clean:style', 'compass', 'cssc', 'cssmin']);
     grunt.registerTask('buildstyle', ['copy', 'shell']);
 
 };

@@ -96,6 +96,10 @@ Susy (http://susy.oddbird.net/)
 - grunt-cssc
 - matchdep
 
+### JavaScript Libraries
+
+- yepnope (http://yepnopejs.com/)
+
 ## Release History
 
 - Oct 20, 2013		0.1.0 		Started created the full workflow

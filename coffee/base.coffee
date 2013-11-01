@@ -1,7 +1,3 @@
-# Splats:
-race = (winner, runners...) ->
-  print winner, runners
-
 # Existence:
 alert "I knew it!" if elvis?
 
